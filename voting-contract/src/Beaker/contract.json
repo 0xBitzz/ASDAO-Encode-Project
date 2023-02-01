@@ -1,0 +1,49 @@
+{
+    "name": "Voting",
+    "methods": [
+        {
+            "name": "create_proposal",
+            "args": [
+                {
+                    "type": "string",
+                    "name": "proposal"
+                },
+                {
+                    "type": "uint64",
+                    "name": "end_time"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "vote",
+            "args": [
+                {
+                    "type": "string",
+                    "name": "vote_choice"
+                },
+                {
+                    "type": "string",
+                    "name": "key"
+                },
+                {
+                    "type": "application",
+                    "name": "app"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "get_vote_result",
+            "args": [],
+            "returns": {
+                "type": "string"
+            }
+        }
+    ],
+    "networks": {}
+}

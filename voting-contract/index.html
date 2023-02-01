@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algo Smart Vote</title>
+    <link href="./app.css" rel="stylesheet" />
+  </head>
+  <body class="gradient-bg-body h-screen">
+    <header
+      class="w-full px-10 flex justify-between items-center py-4 mx-auto h-[10%] border-b border-green-400"
+    >
+      <div
+        class="md:flex-[0.5] flex-initial justify-center items-center text-white font-bold text-2xl"
+      >
+        Algo Smart DAO
+      </div>
+      <select name="accounts" id="accounts" style="display: none">
+        Select account
+      </select>
+      <button
+        id="connect"
+        class="shadow-xl shadow-black text-white bg-green-400 hover:bg-green-600 md:text-xs p-2 rounded-full"
+      >
+        Connect Wallet
+      </button>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-2 h-[90%] w-full">
+      <div class="h-full p-5 pb-2 pl-10">
+        <div class="w-full h-[50%]" style="display: none;" id="hide_proposal_main">
+          <!-- display none -->
+          <form class="flex flex-col h-full">
+            <div
+              class="flex justify-between items-center bg-gray-800 rounded-xl h-[80%]"
+            >
+              <textarea
+                class="block h-full bg-transparent border-0 w-full text-sm text-slate-500 focus:outline-none cursor-pointer focus:ring-0 resize-none"
+                placeholder="Enter your proposal"
+                name="proposal"
+                required
+                value=""
+                id="description"
+                style="color: #fff;"
+              ></textarea>
+            </div>
+
+            <div
+              class="flex justify-between items-center bg-gray-800 rounded-xl mt-1"
+            >
+              <input
+                class="block bg-transparent border-0 w-full text-sm text-slate-500 focus:outline-none cursor-pointer focus:ring-0"
+                type="number"
+                placeholder="Enter end time for your proposal"
+                value=""
+                name="price"
+                required
+                id="end_time"
+                style="color: #fff;"
+              />
+            </div>
+
+            <button
+              class="flex w-full text-md mt-2 justify-center items-center shadow-lg shadow-black text-white bg-green-500 hover:bg-green-600 rounded-full p-2"
+              id="make_proposal"
+            >
+              Make Proposal
+            </button>
+          </form>
+        </div>
+        <div class="w-full h-[50%] pt-5" style="display: none;" id="hide_proposal_sub">
+          <!-- display none -->
+          <div class="h-full bg-gray-700 rounded-md">
+            <button
+              class="flex h-[15%] w-full text-md justify-center items-center shadow-lg shadow-black text-white bg-green-500 hover:bg-green-600 rounded-md p-2"
+              id="get_proposal"
+            >
+              Get Proposal Result
+            </button>
+          </div>
+        </div>
+
+        <div class="h-[75%]">
+          <!-- Lists of results-->
+          <div
+            class="bg-gray-800 p-2 my-4 mx-2 h-auto text-md text-white font-semibold rounded-md"
+            id="yes_voters"
+          >
+            0 Yes
+          </div>
+          <div
+            class="bg-gray-800 p-2 my-4 mx-2 h-auto text-md text-white font-semibold rounded-md"
+            id="no_voters"
+          >
+            0 No
+          </div>
+        </div>
+      </div>
+      <div class="h-full pb-2 p-5 pr-10 overflow-auto">
+        <div class="h-full border-l pl-2">
+          <button
+            class="flex max-h-[10%] w-full text-md justify-center items-center shadow-lg shadow-black text-white bg-green-500 hover:bg-green-600 rounded-md p-2" id="optin_to_contract"
+          >
+            Opt into Contract
+          </button>
+          <div
+            class="h-[90%] overflow-y-auto scrollbar scrollbar-thumb-gray-500 scrollbar-track-slate-900"
+          >
+            <!-- List for proposals-->
+            <div class="h-auto rounded-md mt-4 bg-slate-800">
+              <div class="p-2 text-white text-sm" id="proposal_description">
+                we all need to move up the ladder we all need to move up the
+                ladder we all need to move up the ladder we all need to move up
+                the ladder we all need to move up the ladder we all need to move
+                up the ladder
+              </div>
+              <div class="p-2 text-white text-md">
+                <small class="font-bold"> End Time: </small>
+                <small class="text-green-600" id="proposal_end_time">
+                  60 secs
+                </small>
+              </div>
+
+              <div class="p-2 flex justify-between gap-3">
+                <button
+                  class="flex text-md w-full justify-center items-center shadow-lg text-white bg-green-500 hover:bg-green-600 rounded-md p-2" id="propose_yes"
+                >
+                  YES
+                </button>
+                <button
+                  class="flex text-md w-full justify-center items-center shadow-lg text-white bg-red-500 hover:bg-red-600 rounded-md p-2" id="propose_no"
+                >
+                  NO
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

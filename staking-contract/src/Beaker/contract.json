@@ -1,0 +1,54 @@
+{
+    "name": "Stake",
+    "methods": [
+        {
+            "name": "optin_asset",
+            "args": [
+                {
+                    "type": "asset",
+                    "name": "asset_id"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        },
+        {
+            "name": "stake",
+            "args": [
+                {
+                    "type": "axfer",
+                    "name": "txn"
+                },
+                {
+                    "type": "string",
+                    "name": "key"
+                },
+                {
+                    "type": "application",
+                    "name": "app"
+                }
+            ],
+            "returns": {
+                "type": "uint64"
+            }
+        },
+        {
+            "name": "unstake",
+            "args": [
+                {
+                    "type": "uint64",
+                    "name": "time"
+                },
+                {
+                    "type": "asset",
+                    "name": "asset_id"
+                }
+            ],
+            "returns": {
+                "type": "void"
+            }
+        }
+    ],
+    "networks": {}
+}
